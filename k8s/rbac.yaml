@@ -12,6 +12,7 @@ rules:
 - apiGroups:
   - ""
   resources:
+  - clusterroles
   - configmaps
   - pods
   - pods/log
