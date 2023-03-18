@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: devpod
+  namespace: kuoss
+spec:
+  serviceName: devpod
+  selector:
+    matchLabels:
+      app: devpod
+  template:
+    metadata:
+      labels:
+        app: devpod
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: devpod
+        image: ghcr.io/kuoss/devpod:v0.1.1
+        command: ['sh','-c','/root/init.sh']
+        workingDir: /ws
+        resources:
+          requests:
+            memory: "1000Mi"
+            cpu: "100m"
+          limits:
+            memory: "2000Mi"
+            cpu: "1000m"
+        volumeMounts:
+        - name: vol-init-sh
+          mountPath: /root/init.sh
+          subPath: init.sh
+        - mountPath: /root/.vscode-server
+          name: vol-vscode-server
+        - mountPath: /ws
+          name: vol-ws
+      volumes:
+      - name: vol-init-sh
+        configMap:
+          name: devpod-init-sh
+          defaultMode: 0775
+      - name: vol-vscode-server
+        persistentVolumeClaim:
+          claimName: devpod-vscode-server
+      - name: vol-ws
+        persistentVolumeClaim:
+          claimName: devpod-ws
