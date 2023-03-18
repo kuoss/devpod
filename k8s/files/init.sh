@@ -18,6 +18,6 @@ git config --global pull.rebase false
 
 [ ! -d devpod ] \
 && git clone https://github.com/kuoss/devpod.git \
-&& ln -rs devpod/Makefile.txt ./Makefile
+&& ln -rs /ws/devpod/Makefile.txt /ws/Makefile
 
 exec sleep infinity
