@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devpod
+spec:
+  type: ClusterIP
+  selector:
+    app: devpod
+  ports:
+  - port: 5173
+
