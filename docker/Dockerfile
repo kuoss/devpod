@@ -4,8 +4,8 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
+		npm \
 		vim \
-		nodejs \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
