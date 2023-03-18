@@ -5,9 +5,7 @@ alias ll='ls --color -l'
 alias l='ls --color -lA'
 
 
-cat <<EOF > ~/.git-credentials
-https://$GIT_USER_NAME:$GITHUB_TOKEN@github.com
-EOF
+echo "https://$GIT_USER_NAME:$GITHUB_TOKEN@github.com" > ~/.git-credentials
 git config --global credential.helper 'store ~/.git-credentials'
 code /ws
 EOF
