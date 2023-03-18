@@ -1,5 +1,5 @@
 build:
-	./build.sh
+	cd docker && make build
 
 deploy:
 	cd k8s && kubectl apply -k .

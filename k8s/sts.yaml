@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: devpod
-        image: ghcr.io/kuoss/devpod:v0.1.1
+        image: ghcr.io/kuoss/devpod:v0.1.2
         command: ['sh','-c','/root/init.sh']
         workingDir: /ws
         resources:
