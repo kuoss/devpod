@@ -5,6 +5,7 @@ metadata:
   namespace: kuoss
 spec:
   serviceName: devpod
+  serviceAccountName: devpod
   selector:
     matchLabels:
       app: devpod
