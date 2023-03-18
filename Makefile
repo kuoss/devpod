@@ -1,8 +1,8 @@
 build:
 	cd docker && make build
 
-pvc:
-	cd k8s && kubectl apply -f _pvc.yaml
+preflight:
+	cd k8s/preflight && kubectl apply -f .
 
 deploy:
 	cd k8s && kubectl apply -k .
