@@ -1,14 +1,16 @@
 FROM golang:1.19-bullseye
 
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash - \
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
-		npm \
+		nodejs \
 		vim \
 	; \
+	npm -v ; \
+	node -v ; \
 	rm -rf /var/lib/apt/lists/*
-
+git
 RUN curl -L "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
 -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
