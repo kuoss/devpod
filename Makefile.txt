@@ -1,10 +1,21 @@
 
+install-prometheus:
+	cd devpod/prometheus && make install
+
+install-lethe-writer:
+	cd devpod/lethe-writer && make install
+
 clone:
-	devpod/clone.sh
+	git clone -b develop https://github.com/kuoss/lethe.git
+	git clone https://github.com/kuoss/venti.git
 
 install:
 	cd lethe && make install-dev
 	cd venti && make install-dev
+
+config:
+    cp devpod/config/lethe.yaml       lethe/etc/
+    cp devpod/config/datasources.yaml venti/etc/
 
 run-lethe:
 	cd lethe && make run-dev
