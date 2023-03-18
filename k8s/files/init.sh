@@ -1,5 +1,5 @@
 #!/bin/bash
-cat <<EOF > /root/.bashrc
+cat <<'EOF' > /root/.bashrc
 alias ls='ls --color'
 alias ll='ls --color -alF'
 alias l='ls --color -lA'
@@ -7,8 +7,8 @@ alias l='ls --color -lA'
 echo "https://$GIT_USER_NAME:$GITHUB_TOKEN@github.com" > ~/.git-credentials
 git config --global credential.helper 'store --file ~/.git-credentials'
 
-git config --global user.name   $GIT_USER_NAME
-git config --global user.email  $GIT_USER_EMAIL
+git config --global user.name  $GIT_USER_NAME
+git config --global user.email $GIT_USER_EMAIL
 
 code /ws
 EOF

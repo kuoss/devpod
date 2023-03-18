@@ -20,6 +20,9 @@ spec:
         image: ghcr.io/kuoss/devpod:v0.1.3
         command: ['sh','-c','/root/init.sh']
         workingDir: /ws
+        envFrom:
+        - configMapRef:
+            name: devpod-envs-ini        
         resources:
           requests:
             memory: "1000Mi"

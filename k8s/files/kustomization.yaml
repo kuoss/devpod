@@ -1,5 +1,5 @@
 configMapGenerator:
-- name: devpod-envs
+- name: devpod-envs-ini
   envs: [envs.ini]
 - name: devpod-init-sh
   files: [init.sh]
