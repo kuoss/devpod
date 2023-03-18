@@ -6,14 +6,14 @@ metadata:
   namespace: kuoss
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: Role
 metadata:
   name: devpod
+  namespace: kuoss
 rules:
 - apiGroups:
   - ""
   resources:
-  - clusterroles
   - configmaps
   - pods
   - pods/log
@@ -23,14 +23,22 @@ rules:
   - get
   - list
   - watch
+- apiGroups:
+  - rbac.authorization.k8s.io
+  resources:
+  - clusterroles
+  verbs:
+  - get
+  - list
+  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
   name: devpod
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
+  kind: Role
   name: devpod
 subjects:
 - kind: ServiceAccount
