@@ -19,6 +19,7 @@ ln -s /ws/.vscode-server ~/.vscode-server
 
 [ ! -d devpod ] && git clone https://github.com/kuoss/devpod.git
 [ ! -f Makefile ] && ln -rs devpod/Makefile.txt Makefile
+cd devpod && git pull
 
 echo devpod started...
 exec sleep infinity
