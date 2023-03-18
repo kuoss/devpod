@@ -6,15 +6,16 @@ alias l='ls --color -lA'
 
 echo "https://$GIT_USER_NAME:$GITHUB_TOKEN@github.com" > ~/.git-credentials
 git config --global credential.helper 'store --file ~/.git-credentials'
+
+git config --global user.name   $GIT_USER_NAME
+git config --global user.email  $GIT_USER_EMAIL
+git config --global pull.rebase false
+
 code /ws
 EOF
 
 mkdir -p /ws/.vscode-server
 ln -s /ws/.vscode-server ~/.vscode-server
-
-git config --global user.name   $GIT_USER_NAME
-git config --global user.email  $GIT_USER_EMAIL
-git config --global pull.rebase false
 
 [ ! -d devpod ] && git clone https://github.com/kuoss/devpod.git
 [ ! -f Makefile ] && ln -rs devpod/Makefile.txt Makefile

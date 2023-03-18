@@ -14,13 +14,11 @@ install:
 	cd venti && make install-dev
 
 config:
-    cp devpod/config/lethe.yaml       lethe/etc/
-    cp devpod/config/datasources.yaml venti/etc/
+	cp devpod/config/lethe.yaml       lethe/etc/
+	cp devpod/config/datasources.yaml venti/etc/
 
 run-lethe:
 	cd lethe && make run-dev
 
 run-venti:
 	cd venti && make run-dev
-
-
