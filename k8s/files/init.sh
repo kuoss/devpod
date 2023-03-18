@@ -9,15 +9,15 @@ git config --global credential.helper 'store --file ~/.git-credentials'
 code /ws
 EOF
 
-mkdir /ws/.vscode-server
+mkdir -p /ws/.vscode-server
 ln -s /ws/.vscode-server ~/.vscode-server
 
 git config --global user.name   $GIT_USER_NAME
 git config --global user.email  $GIT_USER_EMAIL
 git config --global pull.rebase false
 
-[ ! -d devpod ] \
-&& git clone https://github.com/kuoss/devpod.git \
-&& ln -rs /ws/devpod/Makefile.txt /ws/Makefile
+[ ! -d devpod ] && git clone https://github.com/kuoss/devpod.git
+[ ! -f Makefile ] && ln -rs devpod/Makefile.txt Makefile
 
+echo devpod started...
 exec sleep infinity
