@@ -1,3 +1,6 @@
 namespace: kuoss
 resources:
 - sts.yaml
+- service.yaml
+- ingress.yaml
+- files
