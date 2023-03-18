@@ -5,7 +5,6 @@ metadata:
   namespace: kuoss
 spec:
   serviceName: devpod
-  serviceAccountName: devpod
   selector:
     matchLabels:
       app: devpod
@@ -14,6 +13,7 @@ spec:
       labels:
         app: devpod
     spec:
+      serviceAccountName: devpod
       terminationGracePeriodSeconds: 0
       containers:
       - name: devpod
