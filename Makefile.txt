@@ -1,0 +1,15 @@
+
+clone:
+	devpod/clone.sh
+
+install:
+	cd lethe && make install-dev
+	cd venti && make install-dev
+
+run-lethe:
+	cd lethe && make run-dev
+
+run-venti:
+	cd venti && make run-dev
+
+
