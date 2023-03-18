@@ -3,12 +3,17 @@ cat <<EOF > /root/.bashrc
 alias ls='ls --color'
 alias ll='ls --color -l'
 alias l='ls --color -lA'
-git config --global credential.helper ''
-echo $GH_TOKEN | GH_TOKEN= gh auth login --with-token
+
+
+cat <<EOF > ~/.git-credentials
+https://$GIT_USER_NAME:$GITHUB_TOKEN@github.com
+EOF
+git config --global credential.helper 'store ~/.git-credentials'
 code /ws
 EOF
 
-ln -s /root/.vscode-server /ws/.vscode-server
+mkdir ~/.vscode-server 
+ln -s ~/.vscode-server /ws/.vscode-server
 
 git config --global user.name  $GIT_USER_NAME
 git config --global user.email $GIT_USER_EMAIL
