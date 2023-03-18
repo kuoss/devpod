@@ -17,6 +17,7 @@ rules:
   - pods
   - pods/log
   - secrets
+  - services
   - serviceaccounts
   verbs:
   - get
