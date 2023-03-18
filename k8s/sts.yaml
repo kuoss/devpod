@@ -30,8 +30,6 @@ spec:
         - name: vol-init-sh
           mountPath: /root/init.sh
           subPath: init.sh
-        - mountPath: /root/.vscode-server
-          name: vol-vscode-server
         - mountPath: /ws
           name: vol-ws
       volumes:
@@ -39,9 +37,6 @@ spec:
         configMap:
           name: devpod-init-sh
           defaultMode: 0775
-      - name: vol-vscode-server
-        persistentVolumeClaim:
-          claimName: devpod-vscode-server
       - name: vol-ws
         persistentVolumeClaim:
           claimName: devpod-ws
