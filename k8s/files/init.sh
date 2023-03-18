@@ -9,7 +9,6 @@ git config --global credential.helper 'store --file ~/.git-credentials'
 
 git config --global user.name   $GIT_USER_NAME
 git config --global user.email  $GIT_USER_EMAIL
-git config --global pull.rebase false
 
 code /ws
 EOF
@@ -19,6 +18,7 @@ ln -s /ws/.vscode-server ~/.vscode-server
 
 [ ! -d devpod ] && git clone https://github.com/kuoss/devpod.git
 [ ! -f Makefile ] && ln -rs devpod/Makefile.txt Makefile
+git config --global pull.rebase false  
 cd devpod && git pull
 
 echo devpod started...
