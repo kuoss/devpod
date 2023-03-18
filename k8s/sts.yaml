@@ -39,4 +39,4 @@ spec:
           defaultMode: 0775
       - name: vol-ws
         persistentVolumeClaim:
-          claimName: devpod-ws
+          claimName: devpod

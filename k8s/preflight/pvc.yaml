@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: devpod-ws
+  name: devpod
   namespace: kuoss
 spec:
   accessModes:
