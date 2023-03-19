@@ -17,8 +17,9 @@ rm -rf   /ws/lost+found
 mkdir -p /ws/.vscode-server
 ln -s    /ws/.vscode-server ~/.vscode-server
 
-[ ! -d devpod ] && git clone https://github.com/kuoss/devpod.git
+[ ! -d devpod   ] && git clone https://github.com/kuoss/devpod.git
 [ ! -f Makefile ] && ln -rs devpod/Makefile.txt Makefile
+[ ! -d .vscode  ] && ln -rs devpod/.vscode      .vscode
 git config --global pull.rebase false  
 cd devpod && git pull
 

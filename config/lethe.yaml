@@ -2,5 +2,5 @@ retention:
   time: 1d
   size: 100m
 storage:
-  rootdirectory: /ws/data/log
+  rootdirectory: /data/log
   driver: filesystem
