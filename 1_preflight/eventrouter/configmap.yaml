@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: eventrouter
-  namespace: kuoss-dev
+  namespace: kube-system
 data:
   config.json: |
     {
