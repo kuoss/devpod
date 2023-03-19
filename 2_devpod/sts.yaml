@@ -26,7 +26,7 @@ spec:
             topologyKey: kubernetes.io/hostname
       containers:
       - name: devpod
-        image: ghcr.io/kuoss/devpod:v0.1.6
+        image: ghcr.io/kuoss/devpod:v0.1.7
         command: ['sh','-c','/root/init.sh']
         workingDir: /ws
         envFrom:
