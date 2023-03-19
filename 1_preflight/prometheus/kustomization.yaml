@@ -1,0 +1,7 @@
+namespace: kuoss-dev
+helmCharts:
+- name: prometheus
+  repo: https://prometheus-community.github.io/helm-charts
+  releaseName: prometheus-dev
+  namespace: kuoss-dev
+  valuesFile: values.yaml

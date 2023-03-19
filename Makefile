@@ -1,8 +1,8 @@
-build:
-	cd docker && make build
+docker:
+	cd 0_docker && make build
 
 preflight:
-	cd k8s/preflight && make deploy
+	cd 1_preflight && make install
 
 deploy:
-	cd k8s && kubectl apply -k .
+	cd 2_deploy && kubectl apply -k .

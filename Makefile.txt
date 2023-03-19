@@ -16,5 +16,3 @@ run-lethe:
 run-venti:
 	cd venti && make run-dev
 
-deploy-lethe-components:
-	cd devpod/lethe-components && make deploy

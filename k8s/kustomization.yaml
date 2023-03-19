@@ -1,6 +1,0 @@
-namespace: kuoss
-resources:
-- sts.yaml
-- service.yaml
-- rbac.yaml
-- files
