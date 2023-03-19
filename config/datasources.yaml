@@ -1,7 +1,7 @@
 datasources:
-- name: Prometheus
+- name: prometheus-dev
   type: prometheus
-  url: http://prometheus:9090
-- name: Lethe
+  url: http://prometheus-dev-server:80
+- name: lethe-dev
   type: lethe
   url: http://localhost:3100
