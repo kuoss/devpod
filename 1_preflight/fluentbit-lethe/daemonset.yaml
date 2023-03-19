@@ -12,7 +12,7 @@ spec:
       labels:
         app: fluentbit-lethe
     spec:
-      serviceAccountName: fluentbit-lethe
+      serviceAccountName: fluentbit-lethe-dev
       terminationGracePeriodSeconds: 0
       tolerations:
       - operator: Exists

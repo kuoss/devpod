@@ -2,7 +2,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: fluentbit-lethe
+  name: fluentbit-lethe-dev
   namespace: kuoss-dev
 rules:
 - apiGroups: [""]
@@ -12,19 +12,19 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: fluentbit-lethe
+  name: fluentbit-lethe-dev
   namespace: kuoss-dev
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: fluentbit-lethe
+  name: fluentbit-lethe-dev
 subjects:
 - kind: ServiceAccount
-  name: fluentbit-lethe
+  name: fluentbit-lethe-dev
   namespace: kuoss-dev
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: fluentbit-lethe
+  name: fluentbit-lethe-dev
   namespace: kuoss-dev
