@@ -5,8 +5,8 @@ metadata:
   namespace: kuoss-dev
 spec:
   tls:
-  - hosts:
-    - devpod.example.com
+  - hosts: ['devpod.example.com']
+    secretName: tls-example-com 
   ingressClassName: private
   rules:
   - host: devpod.example.com
