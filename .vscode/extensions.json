@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "vue.volar"
+        "golang.go",
+        "vue.volar",
+        "vue.vscode-typescript-vue-plugin"
     ]
 }
