@@ -10,7 +10,7 @@ git config --global credential.helper 'store --file ~/.git-credentials'
 git config --global user.name  $GIT_USER_NAME
 git config --global user.email $GIT_USER_EMAIL
 
-code /ws
+which code >/dev/null && code /ws
 EOF
 
 rm -rf   /ws/lost+found

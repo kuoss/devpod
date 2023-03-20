@@ -26,8 +26,8 @@ spec:
             topologyKey: kubernetes.io/hostname
       containers:
       - name: devpod
-        image: ghcr.io/kuoss/devpod:v0.1.7
-        command: ['sh','-c','/root/init.sh']
+        image: ghcr.io/kuoss/devpod:v0.1.8
+        command: ['/tini','-v','--','/root/init.sh']
         workingDir: /ws
         envFrom:
         - configMapRef:
@@ -38,7 +38,6 @@ spec:
             cpu: "200m"
           limits:
             memory: "3500Mi"
-            cpu: "1200m"
         volumeMounts:
         - name: vol-init-sh
           mountPath: /root/init.sh
