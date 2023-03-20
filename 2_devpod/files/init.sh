@@ -16,6 +16,8 @@ EOF
 rm -rf   /ws/lost+found
 mkdir -p /ws/.vscode-server
 ln -s    /ws/.vscode-server ~/.vscode-server
+mkdir -p /ws/pkg
+ln -s    /ws/pkg /go/pkg
 
 [ ! -d devpod   ] && git clone https://github.com/kuoss/devpod.git
 [ ! -f Makefile ] && ln -rs devpod/Makefile.txt Makefile

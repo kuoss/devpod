@@ -37,13 +37,13 @@ spec:
             memory: "1500Mi"
             cpu: "200m"
           limits:
-            memory: "2500Mi"
+            memory: "3500Mi"
             cpu: "1200m"
         volumeMounts:
         - name: vol-init-sh
           mountPath: /root/init.sh
           subPath: init.sh
-        - name: vol-ws
+        - name: vol-data
           mountPath: /ws
         - name: vol-data
           mountPath: /data
@@ -52,9 +52,9 @@ spec:
         configMap:
           name: devpod-init-sh
           defaultMode: 0775
-      - name: vol-ws
-        persistentVolumeClaim:
-          claimName: devpod
       - name: vol-data
         persistentVolumeClaim:
           claimName: lethe
+      # - name: vol-ws
+      #   persistentVolumeClaim:
+      #     claimName: devpod
