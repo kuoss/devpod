@@ -18,3 +18,5 @@ delete-all:
 	kubectl delete clusterrolebinding prometheus-dev-server
 	kubectl delete clusterrolebinding venti-dev
 
+test:
+	3_test/test.sh
