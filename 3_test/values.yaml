@@ -1,0 +1,32 @@
+ingress:
+  domain: example.com
+  tls:
+  - hosts:
+    - example.com
+    secretName: tls-example-com 
+prometheus:
+  persistence:
+    size: 1Gi
+  retention:
+    size: 500MB
+    time: 1d
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
+    limits:
+      cpu: 1000m
+      memory: 1000Mi
+lethe:
+  persistence:
+    size: 1Gi
+  retention:
+    size: 500m
+    time: 1d
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
+    limits:
+      cpu: 1000m
+      memory: 1000Mi

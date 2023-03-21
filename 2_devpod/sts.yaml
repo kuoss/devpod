@@ -43,9 +43,9 @@ spec:
           mountPath: /root/init.sh
           subPath: init.sh
         - name: vol-data
-          mountPath: /ws
-        - name: vol-data
           mountPath: /data
+        - name: vol-data
+          mountPath: /ws
       volumes:
       - name: vol-init-sh
         configMap:
@@ -54,6 +54,3 @@ spec:
       - name: vol-data
         persistentVolumeClaim:
           claimName: lethe
-      # - name: vol-ws
-      #   persistentVolumeClaim:
-      #     claimName: devpod
