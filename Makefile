@@ -1,3 +1,6 @@
+LETHE_VERSION=v0.2.0-dev.1
+VENTI_VERSION=v0.2.0-dev.1
+
 docker:
 	cd 0_docker && make build
 
@@ -19,4 +22,4 @@ delete-all:
 	kubectl delete clusterrolebinding venti-dev
 
 test:
-	3_test/test.sh
+	3_test/test.sh $(LETHE_VERSION) $(VENTI_VERSION)
