@@ -1,6 +1,6 @@
 clone:
 	git clone -b develop https://github.com/kuoss/lethe.git
-	git clone https://github.com/kuoss/venti.git
+	git clone -b bigbang https://github.com/kuoss/venti.git
 
 pull:
 	cd lethe && git pull
@@ -11,8 +11,8 @@ install:
 	cd venti && make install-dev
 
 config:
-	cp devpod/config/lethe.yaml       lethe/etc/
-	cp devpod/config/datasources.yaml venti/etc/
+	rm -f lethe/etc/lethe.yaml       && ln -rs devpod/config/lethe.yaml       lethe/etc/
+	rm -f venti/etc/datasources.yaml && ln -rs devpod/config/datasources.yaml venti/etc/
 
 run-lethe:
 	cd lethe && make run-dev

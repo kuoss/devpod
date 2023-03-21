@@ -1,7 +1,13 @@
 datasources:
 - name: prometheus-dev
   type: prometheus
-  url: http://prometheus-dev-server:80
+  url: 	http://prometheus-dev-server
+  # isDefault: true
 - name: lethe-dev
   type: lethe
   url: http://localhost:3100
+discovery:
+  enabled: true
+  defaultNamespace: kuoss-dev
+  annotationKey: kuoss.org/datasource
+
